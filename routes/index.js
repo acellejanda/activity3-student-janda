@@ -26,9 +26,9 @@
     
 import express from "express";
 import { homePage } from "../controllers/homeController.js";
-import { productcontroller } from "../controllers/productcontroller.js";
+
 import { student } from "../controllers/student.js";
-import { book } from "../controllers/book.js";
+
 
 const router = express.Router();
 router.get("/", student.index);
@@ -42,12 +42,10 @@ router.post("/register", registerUser);
 router.get("/forgot-password", forgotPasswordPage);
 router.get("/dashboard", dashboardPage);
 router.get("/logout", logoutUser);
-router.post("/Productmodel", productcontroller.insert);
-router.get("/all", productcontroller.all);
-router.get("/isa/:id", productcontroller.isa);
+
+
 
 //Students routes
-//create
 router.post("/students", student.insert);
 router.get("/students", student.index);
 router.put("/students/:id", student.update);
@@ -55,11 +53,5 @@ router.delete("/students/:id", student.delete);
 router.get("/students/:id/edit", student.edit);
 router.post("/students/:id/update", student.update);
 router.post("/students/:id/delete", student.delete);
-// Book CRUD routes
-router.post("/books", book.insert);  //create
-router.get("/books", book.index);   //read all
-router.get("/books/:id", book.show); //read one
-router.put("/books/:id", book.update);  //update
-router.delete("/books/:id", book.delete);  //delete
 
 export default router;

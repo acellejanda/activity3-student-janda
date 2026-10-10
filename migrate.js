@@ -2,9 +2,8 @@
 import { Sequelize } from "sequelize";
 import { sequelize } from "./models/db.js";
 import { User } from "./models/userModel.js";
-import { Productmodel } from "./models/Productmodel.js";
 import { Student } from "./models/Student.js";
-import { Book } from "./models/Book.js";
+
 
 
 import inquirer from "inquirer";
